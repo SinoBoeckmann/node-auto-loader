@@ -134,6 +134,7 @@ function Tree (root, children) {
     var fpath = [path, child].join('/');
     var ext = extname(child);
     var name = child.replace(ext, '');
+    name = name.toString().toLowerCase().charAt(0).toUpperCase() + name.substr(1);
 
     if (isDirectory(fpath)) {
       root[name] = Tree(fpath, readdir(fpath));
